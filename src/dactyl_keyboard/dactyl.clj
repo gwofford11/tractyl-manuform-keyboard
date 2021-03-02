@@ -14,7 +14,7 @@
 
 (def nrows 5)
 (def ncols 6)
-(def trackball-enabled false)
+(def trackball-enabled true)
 (def printed-hotswap? false) ; Whether you want the 3d printed version of the hotswap or you ordered some from krepublic
 
 (def α (/ π 8))                        ; curvature of the columns
@@ -25,7 +25,7 @@
 (def column-style
   (if (> nrows 5) :orthographic :standard))  ; options include :standard, :orthographic, and :fixed
 ; (def column-style :fixed)
-(def pinky-15u false)
+(def pinky-15u true)
 
 (defn column-offset [column] (cond
                                (= column 2) [0 2.82 -4.5]
@@ -33,7 +33,7 @@
                                (>= column 4) [0 -16 -5.50]            ; original [0 -5.8 5.64]
                                :else [0 -5 1.5]))
 
-(def thumb-offsets [6 0 10])
+(def thumb-offsets [6 -10 10])
 
 (def keyboard-z-offset 23.5)               ; controls overall height; original=9 with centercol=3; use 16 for centercol=2
 
