@@ -1332,14 +1332,13 @@
            (->> (screw-insert-shape bottom-radius top-radius height)
                 (translate (map + offset [(first position) (second position) (/ height 2)])))))
 
+;location notes are based on right-side
 (defn screw-insert-all-shapes [bottom-radius top-radius height]
-      (union (screw-insert 0 0         bottom-radius top-radius height [7.5 7 0])
-             (screw-insert 0 lastrow   bottom-radius top-radius height (if trackball-enabled [-2 33 0] [0 15 0]))
-             ;  (screw-insert lastcol lastrow  bottom-radius top-radius height [-5 13 0])
-             ;  (screw-insert lastcol 0         bottom-radius top-radius height [-3 6 0])
-             (screw-insert lastcol lastrow  bottom-radius top-radius height [-3.5 17 0])
-             (screw-insert lastcol 0         bottom-radius top-radius height [-1 2 0])
-             (screw-insert 1 lastrow         bottom-radius top-radius height (if trackball-enabled [1 -16 0] [1 -18.5 0]))))
+      (union (screw-insert 0 0         bottom-radius top-radius height [14 7 0]) ;back left
+             (screw-insert 0 lastrow   bottom-radius top-radius height (if trackball-enabled [-0.8 33 0] [0 15 0])) ; middle left
+             (screw-insert lastcol lastrow  bottom-radius top-radius height [-3.5 12.8 0]) ; front right
+             (screw-insert lastcol 0         bottom-radius top-radius height [-1 2.5 0]) ; back right
+             (screw-insert 1 lastrow         bottom-radius top-radius height (if trackball-enabled [3.5 -18.5 0] [1 -18.5 0])))) ; front left
 
 ; Hole Depth Y: 4.4
 (def screw-insert-height 4)
