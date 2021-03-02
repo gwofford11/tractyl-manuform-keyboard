@@ -14,7 +14,7 @@
 
 (def nrows 5)
 (def ncols 6)
-(def trackball-enabled true)
+(def trackball-enabled false)
 (def printed-hotswap? false) ; Whether you want the 3d printed version of the hotswap or you ordered some from krepublic
 
 (def α (/ π 8))                        ; curvature of the columns
@@ -1334,7 +1334,7 @@
 
 ;location notes are based on right-side
 (defn screw-insert-all-shapes [bottom-radius top-radius height]
-      (union (screw-insert 0 0         bottom-radius top-radius height [14 7 0]) ;back left
+      (union (screw-insert 0 0         bottom-radius top-radius height [6 0 0]) ;back left
              (screw-insert 0 lastrow   bottom-radius top-radius height (if trackball-enabled [-0.8 33 0] [0 15 0])) ; middle left
              (screw-insert lastcol lastrow  bottom-radius top-radius height [-3.5 12.8 0]) ; front right
              (screw-insert lastcol 0         bottom-radius top-radius height [-1 2.5 0]) ; back right
