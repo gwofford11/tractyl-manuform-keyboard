@@ -14,7 +14,7 @@
 
 (def nrows 5)
 (def ncols 6)
-(def trackball-enabled true)
+(def trackball-enabled false)
 (def printed-hotswap? false) ; Whether you want the 3d printed version of the hotswap or you ordered some from krepublic
 
 (def α (/ π 8))                        ; curvature of the columns
@@ -1272,7 +1272,7 @@
 
 (def usb-holder-ref (key-position 0 0 (map - (wall-locate2  0  -1) [0 (/ mount-height 2) 0])))
 
-(def usb-holder-position (map + [5 16 0] [(first usb-holder-ref) (second usb-holder-ref) 2]))
+(def usb-holder-position (map + [5 6.8 0] [(first usb-holder-ref) (second usb-holder-ref) 2]))
 (def usb-holder-cube   (cube 18.5 35 4))
 (def usb-holder-holder (translate (map + usb-holder-position [5 -12.9 0]) (difference (cube 21 39 6) (translate [0 0 1] usb-holder-cube))))
 
@@ -1293,8 +1293,8 @@
          (translate [(first pro-micro-position) (second pro-micro-position) (last pro-micro-position)]))
     pro-micro-space))
 
-(def trrs-holder-size [6.2 10 3]) ; trrs jack PJ-320A
-(def trrs-holder-hole-size [6.2 10 6]) ; trrs jack PJ-320A
+(def trrs-holder-size [8.2 10 3]) ; trrs jack PJ-320A
+(def trrs-holder-hole-size [8.2 10 6]) ; trrs jack PJ-320A
 (def trrs-holder-position  (map + usb-holder-position [20.5 0 0]))
 (def trrs-holder-thickness 2)
 (def trrs-holder-thickness-2x (* 2 trrs-holder-thickness))
