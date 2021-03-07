@@ -1293,9 +1293,9 @@
          (translate [(first pro-micro-position) (second pro-micro-position) (last pro-micro-position)]))
     pro-micro-space))
 
-(def trrs-holder-size [8.2 10 3]) ; trrs jack PJ-320A
-(def trrs-holder-hole-size [8.2 10 6]) ; trrs jack PJ-320A
-(def trrs-holder-position  (map + usb-holder-position [20.5 0 0]))
+(def trrs-holder-size [8.2 15 3]) ; trrs jack PJ-320A
+(def trrs-holder-hole-size [8.2 13 6]) ; trrs jack PJ-320A
+(def trrs-holder-position  (map + usb-holder-position [20.5 -2.8 0]))
 (def trrs-holder-thickness 2)
 (def trrs-holder-thickness-2x (* 2 trrs-holder-thickness))
 (def trrs-holder
@@ -1539,7 +1539,7 @@
                     )))
 
 (defn palm-rest-hole-rotate [h] (rotate (deg2rad -3) [0 0 1] h))
-(def palm-hole-origin (map + (key-position 3 (+ cornerrow 1) (wall-locate3 0 -1)) [-1.5 -7 -11]) )
+(def palm-hole-origin (map + (key-position 3 (+ cornerrow 1) (wall-locate3 0 -1)) [1.5 -7 -11]) ) ; -5.5 -7 -11
 
 (def triangle-length 7)
 (def triangle-width 5)
@@ -1648,7 +1648,7 @@
                 screw-insert-holes
                 (translate palm-hole-origin (palm-rest-hole-rotate palm-buckle-holes))))
    (if trackball-enabled (translate trackball-origin (dowell-angle raised-trackball)) nil)
-   ;hotswap-holes
+   hotswap-holes
    (translate [0 0 -20] (cube 350 350 40))))
 
 (def trackball-mount-translated-to-model (difference
